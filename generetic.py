@@ -1,5 +1,8 @@
 import random
 cuntest = 10
+dick = {"richard":[]}
+marxlen = 40
+montreux = 1
 #
 # preturn random item from the list
 # using frilter f
@@ -27,26 +30,64 @@ def run (kpop):
 	richard = [] 
 	for i in range (0,cuntest):
 		richard.append(genany(kpop))
+	dick["richard"]=richard
 	return mainloop(richard)
 
 #
 # Let it loop!
 #
 def mainloop (kpop):
-	pass
+	fleux = 100
+	while fleux:
+		j = []
+		#print (fleux , "_____|_|_|_|_|_|_|_|_|_|_|_|_|_|_|_____" , kpop)
+		for i in kpop:
+			mick , dick = metrix (i)
+			if dick <= marxlen:
+				j.append([dick , i])
+		j.sort(key = lambda x: x[0] , reverse = True)
+		j = list (map(lambda x: x[1] , j))[:cuntest//2]
+		j = slicktion (j)
+		j = cruss(j)
+		j = muff(j)
+		kpop = j
+		fleux -= montreux
+	j = []
+	for i in kpop:
+		mick , dick = metrix (i)
+		if dick <= marxlen:
+			j.append([dick , i])
+	j.sort(key = lambda x: x[0] , reverse = True)
+	j = list (map(lambda x: x[1] , j))[:cuntest//2]
+	if len(j) > 0:
+		return j[0]
 #
 #mutacia
 def muff (kpop):
-	pass
+	for i in range (0 , len(kpop)):
+		k = random.randint(0 , len(kpop[i]) - 1)
+		kpop[i][k] = random_item(dick["richard"][k])
+	return kpop
 #
 #skreczivanie
 def cruss (kpop):
-	pass
+	for i in range (0 , len(kpop)):
+		for j in range (i + 1 , len(kpop)):
+			k = random.randint(0 , len(kpop[i]) - 1)
+			z = kpop[i][k]
+			kpop[i][k] = kpop[j][k]
+			kpop[j][k] = z
+	return kpop
 #
 #selekcia
 def slicktion (kpop):
-	pass
+	return kpop + kpop
 #
-#ocenka
-def voolu (kpop):
-	pass
+#glawnaia metrika
+def metrix (kpop):
+	mick = 1.0
+	dick = 0
+	for i in kpop:
+		mick *= i[0]
+		dick += i[1]
+	return mick , dick
