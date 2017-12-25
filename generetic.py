@@ -22,12 +22,19 @@ def run (kpop):
 	return mainloop(richard)
 def mainloop (kpop):
 	pass
-
+#
+#mutacia
 def muff (kpop):
 	pass
-
+#
+#skreczivanie
 def cruss (kpop):
 	pass
-
+#
+#selekcia
 def slicktion (kpop):
+	pass
+#
+#ocenka
+def voolu (kpop):
 	pass
