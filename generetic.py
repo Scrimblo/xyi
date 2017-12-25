@@ -10,16 +10,28 @@ def random_item(kpop,bts = lambda x : True):
 		return None
 	else:
 		return kpop[random.randint(0,len(kpop)-1)]
+
+#
+# generate random solution
+#
 def genany (kpop):
 	dichard = []
 	for i in kpop:
 		dichard.append(random_item(i))
 	return dichard
+
+#
+# start point
+#
 def run (kpop):
 	richard = [] 
 	for i in range (0,cuntest):
 		richard.append(genany(kpop))
 	return mainloop(richard)
+
+#
+# Let it loop!
+#
 def mainloop (kpop):
 	pass
 
