@@ -38,7 +38,7 @@ def main(argv):
 			ss = list(map(lambda x:delspace(x),i.split(',')))
 			for j in range(len(ss)//2):
 				j*=2;
-				az.append([ss[j],ss[j+1]])
+				az.append([float(ss[j]),int(ss[j+1])])
 			data.append(az)
 	except Exception as e:
 		print('Exception while parsing file: %s'%e)
