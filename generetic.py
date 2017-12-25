@@ -1,7 +1,7 @@
 import random
-cuntest = 10
+cuntest = 5
 dick = {"richard":[]}
-marxlen = 40
+marxlen = 100
 montreux = 1
 #
 # preturn random item from the list
@@ -30,14 +30,16 @@ def run (kpop):
 	richard = [] 
 	for i in range (0,cuntest):
 		richard.append(genany(kpop))
-	dick["richard"]=richard
+	dick["richard"]=richard[:]
 	return mainloop(richard)
 
 #
 # Let it loop!
 #
 def mainloop (kpop):
-	fleux = 100
+	richard = kpop[:]
+	fleux = 10
+	print(richard)
 	while fleux:
 		j = []
 		#print (fleux , "_____|_|_|_|_|_|_|_|_|_|_|_|_|_|_|_____" , kpop)
@@ -47,10 +49,14 @@ def mainloop (kpop):
 				j.append([dick , i])
 		j.sort(key = lambda x: x[0] , reverse = True)
 		j = list (map(lambda x: x[1] , j))[:cuntest//2]
+		print('--1--',j)
 		j = slicktion (j)
+		print('--2--',j)
 		j = cruss(j)
-		j = muff(j)
-		kpop = j
+		print('--3--',j)
+		j = muff(j,richard)
+		print('--4--',j)
+		kpop = j[:]
 		fleux -= montreux
 	j = []
 	for i in kpop:
@@ -63,10 +69,13 @@ def mainloop (kpop):
 		return j[0]
 #
 #mutacia
-def muff (kpop):
+def muff (kpop,richard):
+	print('--',richard)
 	for i in range (0 , len(kpop)):
 		k = random.randint(0 , len(kpop[i]) - 1)
-		kpop[i][k] = random_item(dick["richard"][k])
+		rr = random_item(list(richard[k]))
+		print('k = %s , rr = %s , kp = %s'%(k,rr,kpop[i][k]))
+		kpop[i][k] = rr[:]
 	return kpop
 #
 #skreczivanie
@@ -74,9 +83,9 @@ def cruss (kpop):
 	for i in range (0 , len(kpop)):
 		for j in range (i + 1 , len(kpop)):
 			k = random.randint(0 , len(kpop[i]) - 1)
-			z = kpop[i][k]
-			kpop[i][k] = kpop[j][k]
-			kpop[j][k] = z
+			z = kpop[i][k][:]
+			kpop[i][k] = kpop[j][k][:]
+			kpop[j][k] = z[:]
 	return kpop
 #
 #selekcia
