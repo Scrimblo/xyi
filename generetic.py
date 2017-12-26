@@ -92,7 +92,7 @@ def cruss (kpop):
 def slicktion (kpop):
 	return kpop + kpop
 #
-#glawnaia metrika
+#glawna metrika
 def metrix (kpop):
 	mick = 1.0
 	dick = 0
